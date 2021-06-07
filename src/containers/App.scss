@@ -1,5 +1,5 @@
+@import "../common/scss-variables.scss";
 .App {
     text-align: center;
-    color: green;
-    font-weight: bold;
+    background: $light-mode-bakcground;
 }
