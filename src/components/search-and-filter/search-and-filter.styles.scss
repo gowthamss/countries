@@ -1,0 +1,19 @@
+@import '../../common/scss-variables';
+
+.search-and-filter {
+    display: flex;
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .search-and-filter {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+@media (min-width: $desktop1) and (max-width: $desktop2) {
+    .search-and-filter {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

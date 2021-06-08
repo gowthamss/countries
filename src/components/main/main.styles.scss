@@ -1,0 +1,12 @@
+@import "../../common/scss-variables";
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .main {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: $desktop1) and (max-width: $desktop2) {
+    .main {
+        padding: 5%;
+    }
+}
