@@ -1,5 +1,19 @@
 @import "../common/scss-variables.scss";
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 .App {
     text-align: center;
+}
+
+.App-light {
     background: $light-mode-bakcground;
+}
+
+.App-dark {
+    background: $dark-mode-bakcground;
 }

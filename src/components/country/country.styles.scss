@@ -1,0 +1,59 @@
+@import "../../common/scss-variables.scss";
+.country {
+    border-radius: 8px;
+    height: 350px;
+    .flag-container {
+        height: 50%;
+        .country-flag {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .country-details-container {
+        text-align: left;
+        padding: 2rem;
+        .country-name {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        .country-population,
+        .country-region,
+        .country-capital {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            span {
+                font-weight: normal;
+            }
+        }
+    }
+    // Light
+    &.country-light {
+        background: $light-mode-elems;
+        .country-name,
+        .country-population,
+        .country-region,
+        .country-capital {
+            color: $light-mode-text;
+        }
+    }
+    // Dark
+    &.country-dark {
+        background: $dark-mode-elems;
+        .country-name,
+        .country-population,
+        .country-region,
+        .country-capital {
+            color: $dark-mode-text;
+        }
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .country {}
+}
+
+@media (min-width: $desktop1) and (max-width: $desktop2) {
+    .country {}
+}

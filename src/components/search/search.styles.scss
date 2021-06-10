@@ -5,23 +5,28 @@
 }
 
 .search-box {
-    padding: 1rem;
+    width: 100%;
     & .search {
         padding: 0.5rem 2rem;
         outline: none;
         border: none;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         font-size: 14px;
         height: 3.5rem;
+        border-radius: 5px;
     }
     & .search-light {
-        border-radius: 5px;
         background: white;
-        color: $lignt-mode-input;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        &::placeholder {
+            color: $light-mode-input;
+        }
     }
     & .search-dark {
         background: $dark-mode-elems;
         color: white;
+        &::placeholder {
+            color: $dark-mode-text;
+        }
     }
 }
 
@@ -35,6 +40,11 @@
 
 @media (min-width: $desktop1) and (max-width: $desktop2) {
     .search-box {
-        & .search {}
+        width: 50%;
+        text-align: left;
+        & .search {
+            width: 100%;
+            height: 3rem;
+        }
     }
 }

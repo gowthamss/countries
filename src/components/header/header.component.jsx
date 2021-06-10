@@ -1,11 +1,15 @@
 import React from "react";
 import "./header.styles.scss";
 
-const Header = () => (
-    <section className="header">
+const Header = ({ darkMode, handleDarkMode }) => (
+    <section className={`${darkMode ? "header-dark" : "header-light"} header`}>
         <h2 className="logo">Where in the world!</h2>
-        <div className="theme">
-            <img src="" alt="light mode" />
+        <div className="theme" onClick={handleDarkMode}>
+            {darkMode ? (
+                <i className="far fa-moon"></i>
+            ) : (
+                <i className="fas fa-moon"></i>
+            )}
             <span className="theme-mode">Dark Mode</span>
         </div>
     </section>

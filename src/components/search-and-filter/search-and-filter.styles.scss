@@ -1,5 +1,4 @@
-@import '../../common/scss-variables';
-
+@import "../../common/scss-variables";
 .search-and-filter {
     display: flex;
 }
@@ -7,6 +6,7 @@
 @media (min-width: $mobile) and (max-width: $tablet) {
     .search-and-filter {
         flex-direction: column;
+        align-items: flex-start;
         gap: 3rem;
     }
 }

@@ -1,0 +1,39 @@
+@import "../../common/scss-variables.scss";
+.filter-countries {
+    .filter-dropdown {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        height: 3.5rem;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+    .filter-dropdown-light {
+        background: $light-mode-elems;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .filter-dropdown-dark {
+        background: $dark-mode-elems;
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .filter-countries {
+        width: 100%;
+        text-align: left;
+        .filter-dropdown {
+            width: 60%;
+        }
+    }
+}
+
+@media (min-width: $desktop1) and (max-width: $desktop2) {
+    .filter-countries {
+        width: 50%;
+        text-align: right;
+        .filter-dropdown {
+            width: 50%;
+            height: 3rem;
+        }
+    }
+}

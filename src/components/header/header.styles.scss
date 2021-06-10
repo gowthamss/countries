@@ -1,12 +1,48 @@
 @import "../../common/scss-variables";
 .header {
-    background: $light-mode-elems;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6%;
-    box-shadow: 0 0px 6px 0 rgba(0,0,0,0.2);
+    padding: 1.5rem 1.25rem;
+    cursor: pointer;
+    .logo {
+        font-size: 16px;
+        font-weight: bold;
+    }
     .theme {
-        margin-right: 1rem;
+        // margin-right: 1rem;
+        .theme-mode {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+}
+
+.header-light {
+    background: $light-mode-elems;
+    box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.2);
+    .logo,
+    .theme-mode {
+        color: $light-mode-text;
+    }
+}
+
+.header-dark {
+    background: $dark-mode-elems;
+    .logo,
+    .theme-mode {
+        color: $dark-mode-text;
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .header {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+@media (min-width: $desktop1) and (max-width: $desktop2) {
+    .header {
+        padding: 1.5rem 6%;
     }
 }

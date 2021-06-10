@@ -4,10 +4,10 @@ import "./search-and-filter.styles.scss";
 import SearchBox from "../search/search.component";
 import FilterCoutnries from "../filter/filter.component";
 
-const SearchAndFilter = () => (
+const SearchAndFilter = ({ darkMode }) => (
     <div className="search-and-filter">
-        <SearchBox />
-        <FilterCoutnries />
+        <SearchBox darkMode={darkMode} />
+        <FilterCoutnries darkMode={darkMode} />
     </div>
 );
 
