@@ -1,39 +1,26 @@
 import React from "react";
 import "./App.scss";
 import Header from "../components/header/header.component";
-import Countries from "../components/countries/countries.component";
 import Main from "../components/main/main.component";
+import { selectDarkMode } from "../redux/countries-reducer/countries.selector";
 
-import { Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-class App extends React.Component {
-    constructor() {
-        super();
+const App = ({ darkMode }) => {
+    return (
+        <div className={`${darkMode ? "App-dark" : "App-light"} App`}>
+            <Header />
+            <Main />
+        </div>
+    );
+};
 
-        this.state = {
-            darkMode: false,
-        };
-    }
+const mapStateToProps = createStructuredSelector({
+    darkMode: selectDarkMode,
+});
 
-    handleDarkMode = () => {
-        this.setState({ darkMode: !this.state.darkMode });
-    };
-
-    render() {
-        const { darkMode } = this.state;
-        return (
-            <div className={`${darkMode ? "App-dark" : "App-light"} App`}>
-                <Header
-                    darkMode={darkMode}
-                    handleDarkMode={this.handleDarkMode}
-                />
-                <Main darkMode={darkMode} />
-            </div>
-        );
-    }
-}
-
-export default App;
+export default connect(mapStateToProps)(App);
 
 // <Switch>
 //                     <Route path="/" component={Main} darkMode={darkMode} />

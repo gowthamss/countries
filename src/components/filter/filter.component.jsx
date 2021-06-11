@@ -1,9 +1,15 @@
 import React from "react";
 import "./filter.styles.scss";
 
-import FilterOptions from "../filter-options/filter-options.component";
+import {
+    selectDarkMode,
+    selectRegions,
+} from "../../redux/countries-reducer/countries.selector";
 
-const FilterCoutnries = ({ darkMode }) => (
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
+const FilterCoutnries = ({ darkMode, regions }) => (
     <div className="filter-countries">
         <select
             name="continents"
@@ -12,13 +18,16 @@ const FilterCoutnries = ({ darkMode }) => (
                 darkMode ? "filter-dropdown-dark" : "filter-dropdown-light"
             } filter-dropdown`}
         >
-            <option>Africa</option>
-            <option>America</option>
-            <option>Astralia</option>
-            <option>Asia</option>
-            <option>Europe</option>
+            {regions.map((region, index) => (
+                <option key={index}>{region}</option>
+            ))}
         </select>
     </div>
 );
 
-export default FilterCoutnries;
+const mapStateToProps = createStructuredSelector({
+    darkMode: selectDarkMode,
+    regions: selectRegions,
+});
+
+export default connect(mapStateToProps)(FilterCoutnries);

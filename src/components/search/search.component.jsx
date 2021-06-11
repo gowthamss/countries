@@ -1,6 +1,11 @@
 import React from "react";
 import "./search.styles.scss";
 
+import { selectDarkMode } from "../../redux/countries-reducer/countries.selector";
+
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
 const SearchBox = ({ darkMode }) => (
     <div className="search-box">
         <input
@@ -12,4 +17,8 @@ const SearchBox = ({ darkMode }) => (
     </div>
 );
 
-export default SearchBox;
+const mapStateToProps = createStructuredSelector({
+    darkMode: selectDarkMode,
+});
+
+export default connect(mapStateToProps)(SearchBox);

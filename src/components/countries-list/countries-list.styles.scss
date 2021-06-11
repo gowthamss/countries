@@ -1,4 +1,17 @@
 @import "../../common/scss-variables.scss";
-@media (min-width: $mobile) and (max-width: $tablet) {}
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .countries-list {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
 
-@media (min-width: $desktop1) and (max-width: $desktop2) {}
+@media (min-width: $desktop1) and (max-width: $desktop2) {
+    .countries-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+        grid-column-gap: 3rem;
+        grid-row-gap: 3rem;
+    }
+}
