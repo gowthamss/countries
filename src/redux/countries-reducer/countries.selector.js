@@ -28,7 +28,24 @@ export const selectSearchText = createSelector(
     state => state.searchText
 )
 
-export const selectFilteredCountries = createSelector(
+export const selectFilterOption = createSelector(
+    [stateSelector],
+    state => state.optionValue
+)
+
+export const selectCountriesOnSearchAndFilter = createSelector(
+    [selectSearchText, selectFilterOption, selectCountries],
+    (text, option, countries) => countries.filter(country => (country.name.toLowerCase().includes(text.toLowerCase())) && (country.region.toLowerCase() === option.toLowerCase()))
+)
+
+
+// Individual selectors for search and filter. These are not used because a combined selector is written above named selectCountriesOnSearchAndFilter
+export const selectCountriesOnSearch = createSelector(
     [selectCountries, selectSearchText],
     (countries, searchText) => countries.filter(country => country.name.toLowerCase().includes(searchText.toLowerCase()))
+)
+
+export const selectCountriesOnFilter = createSelector(
+    [selectCountries, selectFilterOption],
+    (countries, optionValue) => countries.filter(country => country.region.toLowerCase() === optionValue.toLowerCase())
 )

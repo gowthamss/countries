@@ -9,7 +9,7 @@ import {
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-const FilterCoutnries = ({ darkMode, regions }) => (
+const FilterCoutnries = ({ darkMode, regions, onFilterCountries }) => (
     <div className="filter-countries">
         <select
             name="continents"
@@ -17,6 +17,7 @@ const FilterCoutnries = ({ darkMode, regions }) => (
             className={`${
                 darkMode ? "filter-dropdown-dark" : "filter-dropdown-light"
             } filter-dropdown`}
+            onChange={onFilterCountries}
         >
             {regions.map((region, index) => (
                 <option key={index}>{region}</option>

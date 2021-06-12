@@ -1,11 +1,12 @@
-import { TOGGLE_DARK_MODE, COUNTRIES_REQUEST_PENDING, COUNTRIES_REQUEST_SUCCESS, COUNTRIES_REQUEST_FAILED, SEARCH_COUNTRIES } from './countries.types';
+import { TOGGLE_DARK_MODE, COUNTRIES_REQUEST_PENDING, COUNTRIES_REQUEST_SUCCESS, COUNTRIES_REQUEST_FAILED, SEARCH_COUNTRIES, FILTER_COUNTRIES } from './countries.types';
 
 const initialState = {
     countries: [],
     isPending: false,
     error: '',
     darkMode: false,
-    searchText: ''
+    searchText: '',
+    optionValue: ''
 }
 
 const countriesReducer = (state = initialState, action) => {
@@ -36,6 +37,11 @@ const countriesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 searchText: action.payload
+            }
+        case FILTER_COUNTRIES:
+            return {
+                ...state,
+                optionValue: action.payload
             }
         default:
             return state;

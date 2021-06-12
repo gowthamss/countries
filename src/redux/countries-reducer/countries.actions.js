@@ -3,7 +3,8 @@ import {
     COUNTRIES_REQUEST_PENDING,
     COUNTRIES_REQUEST_SUCCESS,
     COUNTRIES_REQUEST_FAILED,
-    SEARCH_COUNTRIES
+    SEARCH_COUNTRIES,
+    FILTER_COUNTRIES
 } from './countries.types';
 
 export const toggleDarkMode = () => ({
@@ -24,4 +25,9 @@ export const fetchCountries = () => dispatch => {
 export const setSearchField = (searchtext) => ({
     type: SEARCH_COUNTRIES,
     payload: searchtext
+})
+
+export const setFilterOption = (option) => ({
+    type: FILTER_COUNTRIES,
+    payload: option
 })
