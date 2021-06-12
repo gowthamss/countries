@@ -19,6 +19,15 @@ const FilterCoutnries = ({ darkMode, regions, onFilterCountries }) => (
             } filter-dropdown`}
             onChange={onFilterCountries}
         >
+            <option
+                className={`${
+                    darkMode ? "filter-option-dark" : "filter-option-light"
+                } filter-option`}
+                selected
+                disabled
+            >
+                Filter by Region
+            </option>
             {regions.map((region, index) => (
                 <option
                     className={`${

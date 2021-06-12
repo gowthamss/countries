@@ -58,5 +58,7 @@
 }
 
 @media (min-width: $desktop1) and (max-width: $desktop2) {
-    .country {}
+    .country {
+        height: 500px;
+    }
 }
