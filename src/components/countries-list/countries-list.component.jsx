@@ -2,21 +2,30 @@ import React from "react";
 import "./countries-list.styles.scss";
 
 import Country from "../country/country.component";
-import { selectCountries } from "../../redux/countries-reducer/countries.selector";
+import {
+    selectFilteredCountries,
+    selectSearchText,
+} from "../../redux/countries-reducer/countries.selector";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-const CountriesList = ({ countries }) => (
-    <div className="countries-list">
-        {countries.map((country, index) => (
-            <Country country={country} key={index} />
-        ))}
-    </div>
-);
+const CountriesList = ({ filteredCountries }) => {
+    // const filteredCountries = countries.filter((country) =>
+    //     country.name.toLowerCase().includes(searchText.toLowerCase())
+    // );
+    return (
+        <div className="countries-list">
+            {filteredCountries.map((country, index) => (
+                <Country country={country} key={index} />
+            ))}
+        </div>
+    );
+};
 
 const mapStateToProps = createStructuredSelector({
-    countries: selectCountries,
+    // searchText: selectSearchText,
+    filteredCountries: selectFilteredCountries,
 });
 
 export default connect(mapStateToProps)(CountriesList);

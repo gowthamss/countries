@@ -2,6 +2,7 @@
 // Common styles
 ::placeholder {
     font-size: 16px;
+    // opacity: 0.8;
 }
 
 .search-box {
@@ -19,11 +20,13 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         &::placeholder {
             color: $light-mode-input;
+            // opacity: 0.8;
         }
     }
     & .search-dark {
-        background: $dark-mode-elems;
         color: white;
+        background: $dark-mode-elems;
+        box-shadow: 0 0px 4px 0 rgba(255, 255, 255, 0.2);
         &::placeholder {
             color: $dark-mode-text;
         }
@@ -40,7 +43,7 @@
 
 @media (min-width: $desktop1) and (max-width: $desktop2) {
     .search-box {
-        width: 50%;
+        width: 40%;
         text-align: left;
         & .search {
             width: 100%;

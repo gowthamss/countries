@@ -7,7 +7,7 @@ import FilterCoutnries from "../filter/filter.component";
 const SearchAndFilter = () => (
     <div className="search-and-filter">
         <SearchBox />
-        <FilterCoutnries />
+        {/*<FilterCoutnries />*/}
     </div>
 );
 
