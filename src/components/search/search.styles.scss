@@ -12,16 +12,16 @@
         box-shadow: 0 0px 4px 0 rgba(255, 255, 255, 0.2);
     }
     &.search-box-light {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
     }
     .search-icon {
         height: 3rem;
         width: 3rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        justify-content: flex-end;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
         &.search-icon-light {
             background: $light-mode-elems;
         }
@@ -41,8 +41,8 @@
         border: none;
         font-size: 14px;
         height: 3.5rem;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
     }
     & .search-light {
         background: white;

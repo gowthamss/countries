@@ -7,14 +7,29 @@
         height: 3.5rem;
         border-radius: 5px;
         padding: 1rem;
+        .filter-option {
+            font-size: 14px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .filter-option-light {
+            background: $light-mode-elems;
+            color: $light-mode-text;
+        }
+        .filter-option-dark {
+            background: $dark-mode-elems;
+            color: $dark-mode-text;
+        }
     }
     .filter-dropdown-light {
         background: $light-mode-elems;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+        color: $light-mode-text;
     }
     .filter-dropdown-dark {
         background: $dark-mode-elems;
         box-shadow: 0 0px 4px 0 rgba(255, 255, 255, 0.2);
+        color: $dark-mode-text;
     }
 }
 

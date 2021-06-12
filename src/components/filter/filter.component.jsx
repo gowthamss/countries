@@ -20,7 +20,15 @@ const FilterCoutnries = ({ darkMode, regions, onFilterCountries }) => (
             onChange={onFilterCountries}
         >
             {regions.map((region, index) => (
-                <option key={index}>{region}</option>
+                <option
+                    className={`${
+                        darkMode ? "filter-option-dark" : "filter-option-light"
+                    } filter-option`}
+                    key={index}
+                    value={region}
+                >
+                    {region}
+                </option>
             ))}
         </select>
     </div>
