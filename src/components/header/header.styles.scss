@@ -11,6 +11,9 @@
     }
     .theme {
         // margin-right: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 14px;
         .theme-mode {
             font-size: 14px;
             font-weight: 600;

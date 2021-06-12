@@ -11,7 +11,7 @@ const CountriesList = ({ filteredCountries }) => {
     return (
         <div className="countries-list">
             {filteredCountries.map((country, index) => (
-                <Country country={country} key={index} />
+                <Country country={country} key={index} id={index + 1} />
             ))}
         </div>
     );

@@ -5,8 +5,9 @@ import { selectDarkMode } from "../../redux/countries-reducer/countries.selector
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import { withRouter, Link } from "react-router-dom";
 
-const Country = ({ country, darkMode }) => {
+const Country = ({ country, darkMode, id, match, history }) => {
     const { flag, name, population, region, capital } = country;
     return (
         <div
@@ -35,4 +36,4 @@ const mapStateToProps = createStructuredSelector({
     darkMode: selectDarkMode,
 });
 
-export default connect(mapStateToProps)(Country);
+export default withRouter(connect(mapStateToProps)(Country));
