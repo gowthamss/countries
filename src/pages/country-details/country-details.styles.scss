@@ -103,7 +103,7 @@
     }
     .country-detail {
         display: grid;
-        grid-template-columns: 40vw 60vw;
+        grid-template-columns: 35vw 65vw;
         overflow: hidden;
         img {
             width: 400px;
@@ -113,6 +113,7 @@
             flex-direction: column;
             .country-details-container {
                 margin: 0;
+                flex-basis: 250px;
                 .detail,
                 .detail span {
                     font-size: 14px;
@@ -121,7 +122,7 @@
             & .container1 {
                 display: flex;
                 align-items: center;
-                gap: 15rem;
+                gap: 8rem;
             }
             & .container2 {
                 margin-top: 0.5rem;
