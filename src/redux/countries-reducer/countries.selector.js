@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import memoize from 'lodash.memoize';
 
 const stateSelector = state => state;
 
@@ -36,6 +37,20 @@ export const selectFilterOption = createSelector(
 export const selectCountriesOnSearchAndFilter = createSelector(
     [selectSearchText, selectFilterOption, selectCountries],
     (text, option, countries) => countries.filter(country => (country.name.toLowerCase().includes(text.toLowerCase())) && (country.region.toLowerCase() === option.toLowerCase()))
+)
+
+export const selectCountryDetails = (countryNameParam) => createSelector(
+    [selectCountries],
+    countries => {
+        console.log('countries: ', countries)
+        countries.find(country => {
+            if (country.name === countryNameParam) {
+                console.log(country)
+            }
+            console.log(countryNameParam)
+            return country.name === countryNameParam
+        })
+    }
 )
 
 

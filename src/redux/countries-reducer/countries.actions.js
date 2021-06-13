@@ -5,6 +5,7 @@ import {
     COUNTRIES_REQUEST_FAILED,
     SEARCH_COUNTRIES,
     FILTER_COUNTRIES,
+    EMPTY_SEARCH_FIELD
 } from "./countries.types";
 
 export const toggleDarkMode = () => ({
@@ -32,3 +33,7 @@ export const setFilterOption = (option) => ({
     type: FILTER_COUNTRIES,
     payload: option,
 });
+
+export const emptySearchField = () => ({
+    type: EMPTY_SEARCH_FIELD
+})

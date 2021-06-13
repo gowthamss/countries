@@ -1,4 +1,11 @@
-import { TOGGLE_DARK_MODE, COUNTRIES_REQUEST_PENDING, COUNTRIES_REQUEST_SUCCESS, COUNTRIES_REQUEST_FAILED, SEARCH_COUNTRIES, FILTER_COUNTRIES } from './countries.types';
+import { TOGGLE_DARK_MODE, COUNTRIES_REQUEST_PENDING, COUNTRIES_REQUEST_SUCCESS, COUNTRIES_REQUEST_FAILED, SEARCH_COUNTRIES, FILTER_COUNTRIES, EMPTY_SEARCH_FIELD } from './countries.types';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
+const persistConfig = {
+    key: 'root',
+    storage,
+}
 
 const initialState = {
     countries: [],
@@ -43,9 +50,14 @@ const countriesReducer = (state = initialState, action) => {
                 ...state,
                 optionValue: action.payload
             }
+        case EMPTY_SEARCH_FIELD:
+            return {
+                ...state,
+                searchText: ''
+            }
         default:
             return state;
     }
 }
 
-export default countriesReducer;
+export default persistReducer(persistConfig, countriesReducer);

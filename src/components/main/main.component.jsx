@@ -6,8 +6,7 @@ import Countries from "../countries/countries.component";
 import { fetchCountries } from "../../redux/countries-reducer/countries.actions";
 
 import { connect } from "react-redux";
-import { Route, Switch } from "react-router-dom";
-import CountryPage from "../../pages/country-page/country-page.component";
+import { Route } from "react-router-dom";
 
 class Main extends React.Component {
     componentDidMount() {
@@ -15,6 +14,7 @@ class Main extends React.Component {
     }
 
     render() {
+        console.log(this.props.match);
         return (
             <div className="main">
                 <SearchAndFilter />

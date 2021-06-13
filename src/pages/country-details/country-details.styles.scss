@@ -1,0 +1,131 @@
+@import "../../common/scss-variables.scss";
+@mixin dark {
+    background: $dark-mode-elems;
+    box-shadow: 0 0px 4px 0 rgba(255, 255, 255, 0.2);
+    color: $dark-mode-text;
+}
+
+@mixin light {
+    background: $light-mode-elems;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+    color: $light-mode-text;
+}
+
+.country-page {
+    padding: 2rem;
+}
+
+.back-btn-container {
+    text-align: left;
+    .back-btn {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 0.5rem 1.5rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        &:hover,
+        &:active {
+            opacity: 0.7;
+        }
+        &.back-btn-dark {
+            @include dark();
+        }
+        &.back-btn-light {
+            @include light();
+        }
+        .back-icon {
+            margin-right: 1rem;
+            font-size: 16px;
+        }
+    }
+}
+
+.country-detail {
+    background: none !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    margin-top: 3rem;
+    .flag-container {
+        margin-bottom: 1.5rem;
+        .country-flag {
+            border-radius: 0;
+        }
+    }
+    .country-details-container {
+        padding: 0;
+        margin-bottom: 2.25rem;
+    }
+    .country-border-text {
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        &.country-border-text-dark {
+            color: $dark-mode-text;
+        }
+        &.country-border-text-light {
+            color: $light-mode-text;
+        }
+    }
+    .country-borders {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        .country-border {
+            padding: 0.25rem 1.25rem;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: 600;
+            &.country-border-dark {
+                @include dark();
+            }
+            &.country-border-light {
+                @include light();
+            }
+        }
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .country-detail {
+        img {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@media (min-width: $desktop1) and (max-width: $desktop2) {
+    .country-page {
+        padding: 2rem 6%;
+    }
+    .country-detail {
+        display: grid;
+        grid-template-columns: 40vw 60vw;
+        overflow: hidden;
+        img {
+            width: 400px;
+        }
+        .details-section {
+            display: flex;
+            flex-direction: column;
+            .country-details-container {
+                margin: 0;
+                .detail,
+                .detail span {
+                    font-size: 14px;
+                }
+            }
+            & .container1 {
+                display: flex;
+                align-items: center;
+                gap: 15rem;
+            }
+            & .container2 {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}

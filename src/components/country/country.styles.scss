@@ -4,7 +4,7 @@
     cursor: pointer;
     // height: 350px;
     .flag-container {
-        height: 50%;
+        height: 200px;
         .country-flag {
             height: 100%;
             width: 100%;
@@ -14,15 +14,14 @@
     }
     .country-details-container {
         text-align: left;
-        padding: 2rem;
+        padding: 1rem 2rem 0 2rem;
         .country-name {
             font-size: 22px;
             font-weight: 800;
             margin-bottom: 1.5rem;
+            text-decoration: none;
         }
-        .country-population,
-        .country-region,
-        .country-capital {
+        .detail {
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 0.5rem;
@@ -34,20 +33,18 @@
     // Light
     &.country-light {
         background: $light-mode-elems;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
         .country-name,
-        .country-population,
-        .country-region,
-        .country-capital {
+        .detail {
             color: $light-mode-text;
         }
     }
     // Dark
     &.country-dark {
         background: $dark-mode-elems;
+        box-shadow: 0 0px 4px 0 rgba(255, 255, 255, 0.2);
         .country-name,
-        .country-population,
-        .country-region,
-        .country-capital {
+        .detail {
             color: $dark-mode-text;
         }
     }
@@ -59,6 +56,6 @@
 
 @media (min-width: $desktop1) and (max-width: $desktop2) {
     .country {
-        height: 500px;
+        height: 430px;
     }
 }
