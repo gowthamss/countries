@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { Switch, Route } from "react-router";
 
-const App = ({ darkMode, match }) => {
+const App = ({ darkMode }) => {
     return (
         <div className={`${darkMode ? "App-dark" : "App-light"} App`}>
             <Header />
@@ -21,6 +21,12 @@ const App = ({ darkMode, match }) => {
                     component={CountryDetails}
                 />
             </Switch>
+            <div style={{ color: "salmon", fontSize: "12px" }}>
+                Developed by{" "}
+                <strong>
+                    <em style={{ color: "teal", fontSize: "14px" }}>Gowtham</em>
+                </strong>
+            </div>
         </div>
     );
 };

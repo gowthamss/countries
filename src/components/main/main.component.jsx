@@ -6,7 +6,6 @@ import Countries from "../countries/countries.component";
 import { fetchCountries } from "../../redux/countries-reducer/countries.actions";
 
 import { connect } from "react-redux";
-import { Route } from "react-router-dom";
 
 class Main extends React.Component {
     componentDidMount() {
