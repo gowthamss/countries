@@ -36,13 +36,3 @@ const mapStateToProps = createStructuredSelector({
 });
 
 export default connect(mapStateToProps)(App);
-
-// <Switch>
-//                     <Route path="/" component={Main} darkMode={darkMode} />
-//                 </Switch>
-
-// https://restcountries.eu/rest/v2/all
-// <Switch>
-//                 <Route path="/" component={Main} />
-//                 <Route path={`/countries/:id`} component={CountryPage} />
-//             </Switch>
