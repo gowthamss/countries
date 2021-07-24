@@ -26,6 +26,7 @@ const FilterCoutnries = ({
             } filter-dropdown`}
             onChange={onFilterCountries}
             value={optionValue}
+            defaultValue={"Asia"}
         >
             {regions.map((region, index) => (
                 <option

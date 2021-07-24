@@ -1,10 +1,10 @@
 @import "../../common/scss-variables.scss";
 .country {
     border-radius: 8px;
-    cursor: pointer;
     // height: 350px;
     .flag-container {
         height: 200px;
+        cursor: pointer;
         .country-flag {
             height: 100%;
             width: 100%;
@@ -19,6 +19,8 @@
             font-size: 22px;
             font-weight: 800;
             margin-bottom: 1.5rem;
+            text-decoration: none;
+            cursor: pointer;
             text-decoration: none;
         }
         .detail {

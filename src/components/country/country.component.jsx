@@ -13,8 +13,8 @@ const Country = ({ country, darkMode }) => {
         <div
             className={`${darkMode ? "country-dark" : "country-light"} country`}
         >
-            <div className="flag-container">
-                <Link to={`/countries/${name} `}>
+        <div className="flag-container">
+        <Link to={`/countries/${name} `}>
                     <img
                         src={flag}
                         alt="country flag"
@@ -23,7 +23,9 @@ const Country = ({ country, darkMode }) => {
                 </Link>
             </div>
             <div className="country-details-container">
+            <Link to={`/countries/${name} `}>
                 <h2 className="country-name">{name}</h2>
+                </Link>
                 <p className="country-population detail">
                     Populaton: <span>{population}</span>
                 </p>

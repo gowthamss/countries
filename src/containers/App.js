@@ -15,8 +15,8 @@ const App = ({ darkMode }) => {
             <Header />
             <Switch>
                 <Route exact path="/" component={Main} />
-                <Route
-                    exact
+                <Route exact path="/react-countries" component={Main} />
+                <Route                    
                     path="/countries/:name"
                     component={CountryDetails}
                 />
